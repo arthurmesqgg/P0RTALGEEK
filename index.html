@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+<title>P0RTALGEEK</title>
+
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(20deg, #ffffff, #999999);
+    font-family: 'VT323', sans-serif;
+    color: rgb(85, 81, 81);
+    text-align: center;
+}
+
+#logo {
+    margin-top: 20px;
+}
+
+#emulador-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#emulador-area button,
+#Tela-Cheia {
+    margin-bottom: 20px;
+    font-family: 'VT323', sans-serif;
+    font-size: 14px;
+    padding: 12px 24px;
+    background: #222;
+    color: #cfcfcf;
+    border: 2px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+#emulador-area button:hover,
+#Tela-Cheia:hover {
+    background: #444;
+    color: #33ff00;
+    transform: scale(1.05);
+}
+
+#emulador-area button:active,
+#Tela-Cheia:active {
+    transform: scale(0.95);
+}
+
+#emulator-container {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+}
+</style>
+</head>
+
+<body>
+
+<img id="logo" src="logosite.png" width="500" class="logo">   
+
+<h2>GRUPO 4 / SALA 207</h2>
+
+<div class="container">
+
+  <div class="card">
+<section>
+  <h1>O QUE É LITERATURA GEEK?</h1>
+
+  <h3>-INTRODUÇÃO-</h3>
+  <p>
+  ➣ Literatura Geek é o conjunto de histórias, livros, quadrinhos e narrativas que fazem parte da cultura nerd,
+  envolvendo ficção científica, fantasia, super-heróis, jogos e tecnologia. 
+  </p>
+
+  <p>
+  ➣ Ela é divida em 4 partes, sendo elas: Ficção Científica, Fantasia, Super-Heróis e Jogos.
+  Cada uma dessas partes tem suas próprias características e temas, mas todas compartilham a paixão por contar histórias envolventes e criativas. 
+  </p>
+
+  <p>
+  ➣ Esse tipo de literatura costuma explorar mundos imaginários, avanços tecnológicos, viagens no tempo,
+  universos paralelos e personagens com habilidades especiais, despertando a curiosidade e a criatividade dos leitores.
+  </p>
+
+  <p>
+  ➣ Além disso, a literatura geek está presente em diversas mídias, como filmes, séries, jogos e HQs,
+  mostrando como essas histórias vão além dos livros e influenciam a cultura atual.
+  </p>
+
+  <h3>-ORIGEM-</h3>
+  <p>
+  ➣ A literatura geek tem suas raízes na cultura dos anos 1970, com a popularização dos quadrinhos e das histórias em quadrinhos.
+  </p>
+
+  <p>
+  ➣ Obras de fantasia e ficção científica começaram a ganhar destaque, criando universos complexos e personagens marcantes
+  que conquistaram milhões de fãs ao redor do mundo.
+  </p>
+
+  <p>
+  ➣ Com o avanço da tecnologia e da internet, essa cultura se expandiu ainda mais, dando origem a comunidades,
+  eventos e conteúdos digitais voltados para o público geek.
+  </p>
+</section>
+
+<section>
+<h3>-IMPORTÂNCIA-</h3>
+  <p>
+  ➣ A literatura geek é importante porque promove a criatividade, a imaginação e o pensamento crítico no público,
+  além de incentivar a leitura e o interesse por temas relacionados à ciência, tecnologia e cultura pop no geral.
+  </p>
+
+  <p>
+  ➣ Ela também é uma forma de expressão cultural que celebra a diversidade e a inclusão, permitindo que pessoas de diferentes origens e
+  identidades se vejam representadas em histórias que refletem suas experiências e inspirações, como o Homem-Aranha,
+  que é muito refletido em jovens por conta de pontos em comum,
+  como a resposabilidade, desafios pessoais e superação.
+  </p>
+</section>
+
+<section>
+  <h3>-JOGOS-</h3>
+  <p>
+  ➣ Os jogos são muito presentes na parte da cultura geek por permitirem que o jogador participe diretamente da história,
+  tomando decisões e explorando mundos inspirados na literatura e na ficção. Jogos que são conhecidos nesse nicho são:
+  The Legend of Zelda, Final Fantasy, Pokémon, The Witcher, entre outros.
+  </p>
+</section>
+
+<section>
+<h1>JOGUE AGORA</h1> 
+
+<p>
+  ➣ Agora que você conheceu a Literatura Geek, experimente jogar um dos jogos abaixo e vivenciar essas histórias de uma forma interativa!
+</p>
+</section>
+</div>
+
+</div>
+
+<div id="emulador-area">
+
+<button onclick="loadGame('Super Mario World','MarioWorld.zip','snes')">
+SUPER MARIO WORLD
+</button>
+
+<button onclick="loadGame('Sonic 1','Sonic1.zip','segaMD')">
+SONIC
+</button>
+
+
+<button onclick="loadGame('Mortal Kombat','UMK3.zip','snes')">
+MORTAL KOMBAT
+</button>
+
+<div id="emulator-container"></div>
+
+<button id="Tela-Cheia" onclick="ativarTelaCheia()">
+Tela Cheia
+</button>
+
+</div>
+
+<button class="btn-arcade" onclick="toggleAjuda()">Ajuda</button>
+
+
+<div id="secao-ajuda" style="display: none; max-width:800px; margin:40px auto; text-align:center;">
+    <h1>-MANUAL DE AJUDA-</h1>
+
+    <h3>💾 SALVAR</h3>
+    <p>
+    Clique no ícone de disquete ←💾 dentro do emulador.<br>
+    Vá em “Save State” para salvar seu progresso no jogo.<br>
+    Use “Load State” para carregar um jogo salvo.<br>
+    AVISO: O save é apagado se limpar os dados do navegador.
+    </p>
+
+    <h3>▭ TELA CHEIA</h3>
+    <p>
+    Use o botão "Tela Cheia" abaixo do jogo para colocar o jogo em tela cheia. Certifique-se de carregar um jogo primeiro, caso contrário,
+    a função de tela cheia não funcionará.
+    <br>
+    </p>
+
+</div>
+
+<p id="descricao-site">
+<br><br>
+Ferramentas utilizadas: Visual Studio Code, EmulatorJS, CSS e HTML.
+<br>
+CRIADO POR ARTHUR — 24/03/26.
+</p>
+
+<div id="emulator-container"></div>
+
+<script>
+function loadGame(nome, arquivo, core) {
+
+    const container = document.getElementById("emulator-container");
+    container.innerHTML = '<div id="game"></div>';
+
+    const oldScript = document.getElementById("emulator-loader");
+    if (oldScript) oldScript.remove();
+
+    window.EJS_player = "#game";
+    window.EJS_gameName = nome;
+    window.EJS_gameUrl = arquivo;
+    window.EJS_core = core;
+    window.EJS_pathtodata = "https://cdn.emulatorjs.org/latest/data/";
+    window.EJS_startOnLoaded = true;
+    window.EJS_disableDatabases = true;
+
+    const script = document.createElement("script");
+    script.id = "emulator-loader";
+    script.src = "https://cdn.emulatorjs.org/latest/data/loader.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+}
+
+function loadArchiveGame(url) {
+
+const container = document.getElementById("emulator-container");
+
+container.innerHTML = `
+<iframe 
+id="game"
+src="${url}"
+width="640"
+height="480"
+frameborder="0"
+allowfullscreen>
+</iframe>
+`;
+
+}
+
+// Tela cheia
+
+function ativarTelaCheia() {
+    const gameContainer = document.getElementById('game');
+
+    if (gameContainer) {
+        gameContainer.requestFullscreen();
+
+        // Força foco depois de entrar em tela cheia
+        setTimeout(() => {
+            gameContainer.focus();
+        }, 300);
+
+    } else {
+        alert("Carregue um jogo primeiro!");
+    }
+}
+
+// Sempre que entrar em fullscreen, reforça o foco
+document.addEventListener("fullscreenchange", function() {
+    const gameContainer = document.getElementById("game");
+    if (document.fullscreenElement && gameContainer) {
+        gameContainer.focus();
+    }
+});
+</script>
+
+<script>
+function toggleAjuda() {
+    var secao = document.getElementById("secao-ajuda");
+
+    if (secao.style.display === "none") {
+        secao.style.display = "block";
+    } else {
+        secao.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
